@@ -10,6 +10,9 @@ namespace Assets.Core.Levels
     /// </summary>
     interface IPassageLevel
     {
+        /// <summary>
+        /// Тип прохождения уровня
+        /// </summary>
         PassageLevelTypeEnum PassageLevelType { get; }
     }
 
@@ -25,6 +28,6 @@ namespace Assets.Core.Levels
         /// <summary>
         /// Интератив
         /// </summary>
-       Interactive = 4
+        Interactive = 4
     }
 }

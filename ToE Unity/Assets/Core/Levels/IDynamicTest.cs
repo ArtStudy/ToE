@@ -5,7 +5,12 @@ using System.Text;
 
 namespace Assets.Core.Levels
 {
-    interface IDynamicTest
-    {
+    interface IEntranceTest
+    { 
+        /// <summary>
+        /// Колличесво вопросов
+        /// </summary>
+        int NumberQuestions { get;  }
+        
     }
 }
