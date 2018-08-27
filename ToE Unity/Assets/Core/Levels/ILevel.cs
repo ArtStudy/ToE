@@ -1,16 +1,43 @@
-﻿using System.Collections;
+﻿using Assets.Core.Volutes;
+using System;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Linq;
+using System.Text;
 
-public class ILevel : MonoBehaviour {
+namespace Assets.Core.Levels
+{
+    interface ILevel
+    {
+        /// <summary>
+        /// Номер уровня
+        /// </summary>
+        int IDLevel { get; }
+        /// <summary>
+        /// Имя уровня
+        /// </summary>
+        string NameLavel { get; }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+        /// <summary>
+        /// Цена
+        /// </summary>
+        Money Price { get;  }
+        /// <summary>
+        /// Вознагрождение
+        /// </summary>
+        Money Remuneration { get; }
+        /// <summary>
+        /// Динамический тест
+        /// </summary>
+        IDynamicTest Test { get; }
+        /// <summary>
+        /// Основное прохождение (Текст / Интерактив)
+        /// </summary>
+        IPassageLevel PassageLevel { get; }
+        /// <summary>
+        /// Борьба с боссом
+        /// </summary>
+        IBossFight BossFight { get; }
+
+    }
 }
