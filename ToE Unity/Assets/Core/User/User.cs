@@ -5,8 +5,10 @@ using System.Text;
 
 namespace Assets.Core.User
 {
-    // Интерфейс пользователя
-    public interface IUser
+    /// <summary>
+    /// Класс Пользователя
+    /// </summary>
+    public class User
     {
         /// <summary>
         /// Номер пользователя
@@ -16,5 +18,9 @@ namespace Assets.Core.User
         /// Имя пользователя
         /// </summary>
         string name { get; }
+        /// <summary>
+        /// Email пользователя
+        /// </summary>
+        string email { get; }
     }
 }
