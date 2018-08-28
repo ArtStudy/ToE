@@ -28,4 +28,9 @@ public class Character
     /// Тело персонажа
     /// </summary>
     Look Body { get; }
+
+    /// <summary>
+    /// Уровень персонажа
+    /// </summary>
+    int Tier { get; }
 }

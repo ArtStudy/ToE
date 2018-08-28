@@ -17,10 +17,19 @@ namespace Assets.Core.User
         /// <summary>
         /// Имя пользователя
         /// </summary>
-        string name { get; }
+        string Name { get; }
         /// <summary>
         /// Email пользователя
         /// </summary>
-        string email { get; }
+        string Email { get; }
+        /// <summary>
+        /// Пароль
+        /// </summary>
+        string Password { get; }
+
+        /// <summary>
+        /// Персонаж
+        /// </summary>
+        Character UserCharacter { get; }
     }
 }

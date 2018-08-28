@@ -25,6 +25,17 @@ namespace Assets.Core.Ages
         /// </summary>
         List <Edge> edges { get; }
 
+        /// <summary>
+        /// Добавление уровня
+        /// </summary>
+        /// <param name="_level"></param>
+        void AddLevel(ILevel _level);
+        /// <summary>
+        /// Удаление уровня
+        /// </summary>
+        /// <param name="levelID"></param>
+        void RemoveLevel(int levelID);
+
 
     }
 }

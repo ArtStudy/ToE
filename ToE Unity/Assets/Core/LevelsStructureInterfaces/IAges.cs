@@ -18,7 +18,7 @@ namespace Assets.Core.Ages
         /// <summary>
         /// Номер Эры
         /// </summary>      
-        string ID { get; }
+        int ID { get; }
 
         /// <summary>
         /// Цена перехода в Эру
@@ -35,5 +35,14 @@ namespace Assets.Core.Ages
         /// </summary>
         IGraph Graph { get; }
 
+        /// <summary>
+        /// Добавление графа
+        /// </summary>
+        /// <param name="_graph"></param>
+        void AddGraph(IGraph _graph);
+        /// <summary>
+        /// Удаление графа
+        /// </summary>
+        void RemoveGraph();
     }
 }
