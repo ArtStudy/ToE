@@ -4,10 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace Assets.Core.Levels
 {
-    interface ILevel
+    public interface ILevel
     {
         /// <summary>
         /// Номер уровня
@@ -17,7 +18,6 @@ namespace Assets.Core.Levels
         /// Имя уровня
         /// </summary>
         string NameLavel { get; }
-
 
         /// <summary>
         /// Цена
@@ -48,6 +48,7 @@ namespace Assets.Core.Levels
         /// Статус уровня
         /// </summary>
         StateLevel StateLevel { get; }
+
 
     }
     public enum StateLevel

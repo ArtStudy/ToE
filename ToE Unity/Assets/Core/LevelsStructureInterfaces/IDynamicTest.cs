@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Assets.Core.Levels
 {
-    interface IEntranceTest
+    public interface IEntranceTest
     { 
         /// <summary>
         /// Колличесво вопросов

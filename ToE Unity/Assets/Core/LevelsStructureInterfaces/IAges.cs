@@ -1,8 +1,7 @@
 ﻿using Assets.Core.Volutes;
-using System;
+using Assets.Core;
+using Assets.Core.Levels;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Assets.Core.Ages
 {
@@ -29,20 +28,11 @@ namespace Assets.Core.Ages
         /// Доступность Эры
         /// </summary>
         bool Availability { get; }
-        
-        /// <summary>
-        /// Граф Эры
-        /// </summary>
-        IGraph Graph { get; }
 
         /// <summary>
-        /// Добавление графа
+        /// Уровни эры
         /// </summary>
-        /// <param name="_graph"></param>
-        void AddGraph(IGraph _graph);
-        /// <summary>
-        /// Удаление графа
-        /// </summary>
-        void RemoveGraph();
+        List<ILevel> Levels { get; }
+
     }
 }

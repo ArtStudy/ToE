@@ -1,9 +1,5 @@
-﻿using Assets.Core.User;
-using Assets.Core.Volutes;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using Assets.Core.Volutes;
+using Assets.Core;
 public class Character
 {
     /// <summary>

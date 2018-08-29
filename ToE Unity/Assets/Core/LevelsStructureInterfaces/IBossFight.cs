@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Assets.Core.Levels
 {
-    interface IBossFight
+    public interface IBossFight
     {
+
     }
 }

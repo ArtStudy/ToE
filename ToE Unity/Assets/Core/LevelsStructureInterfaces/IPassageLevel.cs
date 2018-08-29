@@ -8,7 +8,7 @@ namespace Assets.Core.Levels
     /// <summary>
     /// Интерфейс прохождения уровня
     /// </summary>
-    interface IPassageLevel
+    public interface IPassageLevel
     {
         /// <summary>
         /// Тип прохождения уровня
@@ -19,7 +19,7 @@ namespace Assets.Core.Levels
     /// <summary>
     /// Тип прохождения уровня
     /// </summary>
-   enum PassageLevelTypeEnum
+   public enum PassageLevelTypeEnum
     {
         /// <summary>
         /// Статья
