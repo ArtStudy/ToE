@@ -306,6 +306,8 @@
 -i:"D:/Облака/OneDrive/GitHub/ToE/ToE Unity/Assets/Core/LevelsStructureInterfaces/IPassageLevel.cs"
 -i:"D:/Облака/OneDrive/GitHub/ToE/ToE Unity/Assets/Core/Questions/IQuestion.cs"
 -i:"D:/Облака/OneDrive/GitHub/ToE/ToE Unity/Assets/Core/Serialization/Serializer.cs"
+-i:"D:/Облака/OneDrive/GitHub/ToE/ToE Unity/Assets/Core/ToePac/Item.cs"
+-i:"D:/Облака/OneDrive/GitHub/ToE/ToE Unity/Assets/Core/ToePac/PAC.cs"
 -i:"D:/Облака/OneDrive/GitHub/ToE/ToE Unity/Assets/Core/User/Character.cs"
 -i:"D:/Облака/OneDrive/GitHub/ToE/ToE Unity/Assets/Core/User/Look.cs"
 -i:"D:/Облака/OneDrive/GitHub/ToE/ToE Unity/Assets/Core/User/LookParts/Body.cs"
