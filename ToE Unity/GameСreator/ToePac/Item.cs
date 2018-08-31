@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -7,16 +8,27 @@ using System.Threading.Tasks;
 
 namespace GameСreator.ToePac
 {
-    public class Item
+    public class Item : INotifyPropertyChanged
     {
 
 
         Stream stream;
+        private string _name = string.Empty;
+        private ulong _identifier = 0;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
 
 
-
-
-  //      UInt16 _FileType = 0;
+        //      UInt16 _FileType = 0;
         public Item()
         {
 
@@ -29,7 +41,7 @@ namespace GameСreator.ToePac
         public void Serialization(Stream st)
         {
             stream = st;
-           // stream.Position = positionitem;
+            // stream.Position = positionitem;
             var bw = new BinaryWriter(stream);
 
             bw.Write(this.Identifier);
@@ -40,16 +52,16 @@ namespace GameСreator.ToePac
             bw.Write(this.Position);
 
             BinaryReader br = new BinaryReader(this.Data);
-           
-                var b = br.ReadBytes((int)this.Data.Length);
 
-                stream.Position = this.Position;
-                stream.Write(b, 0, b.Length);
-            
-           
+            var b = br.ReadBytes((int)this.Data.Length);
+
+            stream.Position = this.Position;
+            stream.Write(b, 0, b.Length);
 
 
-     
+
+
+
         }
         public Item Deserialization(Stream data)
         {
@@ -59,7 +71,7 @@ namespace GameСreator.ToePac
 
             this.Identifier = br.ReadUInt64();
             this.Name = new string(br.ReadChars(64));
-            this.FileType = (FileTypes) br.ReadInt64() ;
+            this.FileType = (FileTypes)br.ReadInt64();
             var length = br.ReadInt64();
             this.Position = br.ReadInt64();
 
@@ -69,7 +81,7 @@ namespace GameСreator.ToePac
             data.Read(bytedata, 0, (int)length);
 
             this.Data = new MemoryStream(bytedata);
-          
+
 
 
             return null;
@@ -79,16 +91,14 @@ namespace GameСreator.ToePac
         /// <summary>
         /// Идентификатор файла
         /// </summary>
-        public UInt64 Identifier { get; set; } = 0;
-
-        public string Name { get; set; } = string.Empty;
-
+        public UInt64 Identifier { get => _identifier; set { _identifier = value; OnPropertyChanged("Identifier"); } }
+        public string Name { get => _name; set { _name = value; OnPropertyChanged("Name"); } }
 
         /// <summary>
         /// Тип файла
         /// </summary>
         public FileTypes FileType { get; set; } = FileTypes.Unknown;
-         
+
         /// <summary>
         /// Длинна файла
         /// </summary>
@@ -107,6 +117,6 @@ namespace GameСreator.ToePac
     public enum FileTypes : long
     {
         Unknown = 0,
-        Json = 1
+        txt = 1
     }
 }

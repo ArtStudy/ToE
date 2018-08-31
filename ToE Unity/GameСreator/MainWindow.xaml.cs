@@ -1,4 +1,7 @@
-﻿using GameСreator.ToePac;
+﻿using GalaSoft.MvvmLight.Messaging;
+using GameСreator.DWIndows;
+using GameСreator.Pages;
+using GameСreator.ToePac;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,28 +26,32 @@ namespace GameСreator
     /// </summary>
     public partial class MainWindow : Window
     {
+        AddResourse AddResourseWindow;
         public MainWindow()
         {
             InitializeComponent();
 
+            Messenger.Default.Register<NavigatorPageMessege>(this, NavigatorPageAction);
+
+
             var data = new PAC();
-            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Json, Identifier = 123 });
-            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Json, Identifier = 12345 });
-            data.Items.Add(new Item() { Data = "ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Json, Identifier = 12345678 });
-            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Json, Identifier = 123 });
-            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Json, Identifier = 12345 });
-            data.Items.Add(new Item() { Data = "ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Json, Identifier = 12345678 });
-            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Json, Identifier = 123 });
+            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.txt, Identifier = 123 });
+            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.txt, Identifier = 12345 });
+            data.Items.Add(new Item() { Data = "ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.txt, Identifier = 12345678 });
+            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.txt, Identifier = 123 });
+            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.txt, Identifier = 12345 });
+            data.Items.Add(new Item() { Data = "ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.txt, Identifier = 12345678 });
+            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.txt, Identifier = 123 });
             data.Items.Add(new Item() { Data = "ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Unknown, Name = "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111", Identifier = 12345678 });
             data.Items.Add(new Item() { Data = "ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Unknown, Name = "1234", Identifier = 12345678 });
 
-            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Json, Identifier = 12345 });
-            data.Items.Add(new Item() { Data = "ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Json, Identifier = 12345678 });
-            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Json, Identifier = 123 });
-            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Json, Identifier = 12345 });
-            data.Items.Add(new Item() { Data = "ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Json, Identifier = 12345678 });
-            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Json, Identifier = 123 });
-            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Json, Identifier = 12345 });
+            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.txt, Identifier = 12345 });
+            data.Items.Add(new Item() { Data = "ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.txt, Identifier = 12345678 });
+            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.txt, Identifier = 123 });
+            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.txt, Identifier = 12345 });
+            data.Items.Add(new Item() { Data = "ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.txt, Identifier = 12345678 });
+            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.txt, Identifier = 123 });
+            data.Items.Add(new Item() { Data = "ТЕКСТ ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.txt, Identifier = 12345 });
             data.Items.Add(new Item() { Data = "ТЕКСТ".GenerateStreamFromString(), FileType = FileTypes.Unknown,  Name = "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",  Identifier = 12345678 });
             var str = data.Serialization();
             var r =  new PAC(str);
@@ -66,5 +73,25 @@ namespace GameСreator
            
            
         }
+        private void NavigatorPageAction(NavigatorPageMessege obj)
+        {
+            switch (obj.NamePage)
+            {
+                case "ResourcesPage":
+                    MainPage.Source = new Uri( "Pages\\ResourcesPage.xaml",  UriKind.Relative);
+                    break;
+                case "AddResourseWindowOpen":
+                    AddResourseWindow?.Close();
+                    AddResourseWindow = new AddResourse();
+                    AddResourseWindow.ShowDialog();
+                    break;
+                case "AddResourseWindowClose":
+                    AddResourseWindow?.Close();
+                    AddResourseWindow = null;
+                    break;
+            }
+        }
+
+
     }
 }

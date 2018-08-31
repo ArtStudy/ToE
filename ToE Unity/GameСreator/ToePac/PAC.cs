@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -8,13 +9,24 @@ using System.Threading.Tasks;
 
 namespace GameСreator.ToePac
 {
-    public class PAC
+    public class PAC : INotifyPropertyChanged
     {
         public const string FileTypeConst = "PACT";
         public const int VersionConst = 1;
         string _FileType = "PACT";
         int _Version = 1;
         ListItem _Items = new ListItem();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
 
         public PAC() { }
 

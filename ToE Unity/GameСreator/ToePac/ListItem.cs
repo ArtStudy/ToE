@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -7,10 +8,22 @@ using System.Threading.Tasks;
 
 namespace GameСreator.ToePac
 {
-    public class ListItem : List<Item>
+    public class ListItem : List<Item> , INotifyPropertyChanged
     {
         long StartPosition = 64;
         Stream stream;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+
         public ListItem()
         {
 
