@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Core.Game.Ages_and_Graphs
 {
-    class LevelUI : MonoBehaviour
+    public class LevelUI : MonoBehaviour
     {
         public ILevel level;
         

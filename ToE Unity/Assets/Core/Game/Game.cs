@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Core.Game.Animations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,14 +16,15 @@ public class Game : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+        for (int i = 0; i < Ages.Count; i++) 
+            MenuAnimations.Rotation(Ages[i]);
+    }
 
     void LoadAges()
     {
         for (int i = 0; i < Ages.Count; i++) 
         {
-            Instantiate(Ages[i]);
+            Ages[i] = Instantiate(Ages[i]);
         }
     }
 }
